@@ -1,12 +1,7 @@
 import React from "react";
-import Header from "../components/Header";
 
 const IndexPage = () => {
-  return (
-    <div>
-      <Header />
-    </div>
-  );
+  return <div>index</div>;
 };
 
 export default IndexPage;
