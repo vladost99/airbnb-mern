@@ -1,11 +1,14 @@
 import axios from "axios";
 import { getUserFromCookie } from "../utils/user.utils";
 
-const baseURL = `http://localhost:4000/api`;
+const url = `http://localhost:4000`;
+const baseURL = `${url}/api`;
 
 const $api = axios.create({
   baseURL,
 });
+
+export const imagesURL = `${url}/uploads`;
 
 $api.interceptors.request.use(async (config) => {
   return {

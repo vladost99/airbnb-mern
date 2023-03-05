@@ -3,6 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { userAPI } from "../api/user.api";
 import { UserContext } from "../context/user.context";
+import { routerLink } from "../routes";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -16,14 +17,14 @@ const LoginPage = () => {
       const userInfo = await userAPI.login({ email, password });
       setUser(userInfo);
       alert("Login successfull");
-      navigate("/");
+      navigate(routerLink.home);
     } catch (errorMessage) {
       alert(`Login failed (${errorMessage})`);
     }
   };
 
   if (user) {
-    return <Navigate replace to="/" />;
+    return <Navigate replace to={routerLink.home} />;
   }
 
   return (
@@ -48,7 +49,7 @@ const LoginPage = () => {
           </button>
           <div className="text-center py-2 text-gray-500">
             Don't have an account yet?{" "}
-            <Link className="underline text-black" to="/register">
+            <Link className="underline text-black" to={routerLink.register}>
               Register
             </Link>
           </div>

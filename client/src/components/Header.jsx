@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context/user.context";
+import { routerLink } from "../routes";
 
 const Header = () => {
   const { user } = useContext(UserContext);
   return (
-    <header className="flex justify-between">
-      <Link to="/" className="flex items-center gap-1">
+    <header className="flex justify-between  md:flex-row lg:flex-row">
+      <Link to={routerLink.home} className="flex items-center gap-1 w-[100px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -23,7 +24,7 @@ const Header = () => {
         </svg>
         <span className="font-bold text-xl">airbnb</span>
       </Link>
-      <div className="flex gap-2 border border-gray-300 rounded-full py-2 px-4 shadow-md shadow-gray-300">
+      <div className="flex gap-2 border border-gray-300 rounded-full py-2 px-4 shadow-md shadow-gray-300 xs:hidden md:flex">
         <div>Anywhere</div>
         <div className="border border-l border-gray-300"></div>
         <div>Any week</div>
@@ -47,8 +48,8 @@ const Header = () => {
         </button>
       </div>
       <Link
-        to={user ? "/account" : "/login"}
-        className="flex items-center gap-2 border border-gray-300 rounded-full py-2 px-4 "
+        to={user ? routerLink.profile : routerLink.login}
+        className="flex items-center gap-2 border border-gray-300 rounded-full py-2 px-4"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
