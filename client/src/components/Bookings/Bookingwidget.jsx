@@ -57,8 +57,8 @@ const Bookingwidget = ({ place }) => {
       place: place._id,
       name: name.value,
       phone: mobile.value,
-      numberOfGuests: maxGuests.value,
-      price: numberOfDays * place.price,
+      numberOfGuests: Number(maxGuests.value),
+      price: Number(numberOfDays * place.price),
     };
 
     try {

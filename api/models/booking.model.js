@@ -16,6 +16,7 @@ const BookingSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
+  numberOfGuests: { type: Number, required: true },
 });
 
 const BookingModel = mongoose.model("Booking", BookingSchema);

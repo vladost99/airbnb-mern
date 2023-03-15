@@ -130,10 +130,10 @@ const MyPlace = () => {
       description: description.value,
       perks: perks.value,
       extraInfo: extraInfo.value,
-      checkIn: checkIn.value,
-      checkOut: checkOut.value,
-      maxGuests: maxGuests.value,
-      price: price.value,
+      checkIn: Number(checkIn.value),
+      checkOut: Number(checkOut.value),
+      maxGuests: Number(maxGuests.value),
+      price: Number(price.value),
     };
 
     try {
